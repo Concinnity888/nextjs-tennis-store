@@ -1,0 +1,19 @@
+.head {
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+@media (min-width: 1023px) {
+  .catalog {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

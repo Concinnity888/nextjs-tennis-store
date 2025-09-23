@@ -1,0 +1,21 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0;
+}
+
+.allLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.catalog {
+  display: flex;
+  overflow: scroll;
+  gap: 8px;
+}
