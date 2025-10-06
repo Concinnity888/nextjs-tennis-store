@@ -1,9 +1,13 @@
 import { FC } from "react";
 import styles from "./Rackets.module.css";
 import Card from "@/components/Card";
-import { rackets } from "@/constants/mock";
+import { IRacket } from "@/types/racket";
 
-const Rackets: FC = () => {
+type Props = {
+  rackets: IRacket[];
+};
+
+const Rackets: FC<Props> = ({ rackets }) => {
   return (
     <div className={styles.body}>
       <div className={styles.head}>
