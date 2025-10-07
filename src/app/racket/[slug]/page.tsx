@@ -28,9 +28,7 @@ const Page: FC<Props> = async ({ params }) => {
   }
 
   return (
-    <Suspense fallback={<Loading />}>
-      <Racket {...racket} />
-    </Suspense>
+    <Racket {...racket} />
   );
 };
 
