@@ -1,6 +1,7 @@
 import { FC } from "react";
 import styles from "./Card.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   racket: {
@@ -18,7 +19,7 @@ const Card: FC<Props> = ({ racket }) => {
           <Image className={styles.image} src={racket.imageUrl} alt={racket.name} width={230} height={240} />
         )}
       </div>
-      <h2 className={styles.title}>{racket.name}</h2>
+      <Link className={styles.link} href={`/racket/${racket.id}`}>{racket.name}</Link>
     </div>
   );
 };

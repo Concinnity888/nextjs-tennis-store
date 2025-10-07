@@ -1,15 +1,17 @@
-.head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
+.body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  width: 100%;
 }
 
-.title {
+.title,
+.subtitle {
   margin: 0;
 }
 
-.allLink {
+.allLink,
+.link {
   text-decoration: none;
   color: inherit;
 }

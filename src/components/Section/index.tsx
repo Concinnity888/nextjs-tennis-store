@@ -1,14 +1,14 @@
 import { FC, ReactNode } from "react";
-import styles from "./Head.module.css";
+import styles from "./Section.module.css";
 
-const Head: FC<{
+const Section: FC<{
   children: ReactNode;
 }> = ({ children }) => {
   return (
-    <div className={styles.head}>
+    <div className={styles.section}>
       {children}
     </div>
   );
 };
 
-export default Head;
+export default Section;

@@ -1,10 +1,8 @@
-import { FC } from "react";
-import { rackets } from "@/constants/mock";
+import { FC, Suspense } from "react";
 import Racket from "@/containers/Racket";
-
-export const generateStaticParams = () => {
-  return [{ slug: "1" }, { slug: "2" }, { slug: "3" }];
-};
+import { getRacketById } from "@/servises/getRacketById";
+import { notFound } from "next/navigation";
+import Loading from "./loading";
 
 type Props = {
   params: Promise<{
@@ -14,7 +12,20 @@ type Props = {
 
 const Page: FC<Props> = async ({ params }) => {
   const { slug } = await params;
-  const racket = rackets.find((racket) => racket.id === Number(slug));
+
+  const { data: racket, isError } = await getRacketById({ id: slug });
+
+  if (!isError && !racket) {
+    return 'No result';
+  }
+
+  if (isError) {
+    return 'Error';
+  }
+
+  if (!racket) {
+    return notFound();
+  }
 
   return (
     <Racket {...racket} />
